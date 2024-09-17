@@ -1,3 +1,4 @@
+
 import {
   IsEmail,
   IsString,
@@ -24,3 +25,19 @@ export class SignUpShopDto {
   })
   password: string;
 }
+
+export class LoginShopDto {
+  @IsString()
+  @IsNotEmpty()
+  @IsEmail()
+  email: string;
+
+  @IsNotEmpty()
+  @IsString()
+  @MinLength(8)
+  @Matches(/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$/, {
+    message: 'Password too weak',
+  })
+  password: string;
+}
+

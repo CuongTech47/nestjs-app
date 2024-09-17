@@ -7,6 +7,6 @@ export interface Shop extends Document {
   readonly status: string;
   readonly verify: boolean;
   readonly roles: [];
-  readonly created_at: Date;
-  readonly updated_at: Date;
+  readonly createdAt: Date;
+  readonly updatedAt: Date;
 }
